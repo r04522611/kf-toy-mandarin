@@ -1,5 +1,7 @@
 # Deterministic replay 與封存數值重現是兩項驗證
 
+[英文版本](https://github.com/r04522611/kf-toy/blob/codex/kf-cpp-toy/docs/numerical-reproduction.md)
+
 最終程式的8組CTest通過。完整matrix每個cell在同binary／image／輸入／protocol下重跑一次，比較所有結果檔案的bytes。另以80個歷史cell核對direct GNSS antenna residual RMSE；C15 GN／LM的16個新cell沒有舊baseline。
 
 最初宣告的archive嚴格容差為水平／3D RMSE差1mm。兩個11 pure DR cell超出：

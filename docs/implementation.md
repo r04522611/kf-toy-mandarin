@@ -1,5 +1,7 @@
 # 實作契約與設計對照
 
+[英文版本](https://github.com/r04522611/kf-toy/blob/codex/kf-cpp-toy/docs/implementation.md)
+
 本輪依 `plan/KF.md` 實作 fixed-gravity Step1–5B／C15、KF／GN／LM、CSV replay 與教學；ROS、硬即時、全歷史 H1–H7／graph experiments 的重跑不在本輪範圍。
 
 ## Formula → source

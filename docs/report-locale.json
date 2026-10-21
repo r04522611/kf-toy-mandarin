@@ -1,0 +1,11 @@
+{
+  "language": "zh-TW",
+  "title": "獨立 KF 驗證總報告",
+  "navigation": "[中文版 repo](https://github.com/r04522611/kf-toy-mandarin) | [英文驗證報告](https://github.com/r04522611/kf-toy/blob/codex/kf-cpp-toy/docs/validation.md)",
+  "summary": "- 執行與確定性：**{runs}/96 通過**；每組重跑輸出逐 byte 相同。\n- 歷史參考：**{refs} 組**；水平／3D RMSE 最大差異 **{maximum:.9g} m**（原宣告容差 {tolerance:g} m）。\n- 新增 C15 迭代案例：**{new} 組**，沒有捏造歷史基準。\n- runner 最大時鐘誤差：**{clock:.9g} s**；初始化後沒有融合 GNSS position。",
+  "strict": "**嚴格歷史容差檢查：** {within}/{refs} 在 {tolerance:g} m 內；{failures} 組超出。此項與執行／確定性分開判定，不能宣稱全部通過。",
+  "failure": "- {data} / {mode} / {method}: 水平差異 {horizontal_difference_m:.9g} m, 3D 差異 {position3d_difference_m:.9g} m.",
+  "limitations": "真實道路分數是直接 GNSS antenna residual proxy，並非獨立 SE3 真值。逐 byte 重跑只適用於相同 image／binary／input／protocol，不保證任意平台一致。每組 run 記錄 archive compatibility 或 uniform 數值策略。",
+  "rows_note": "以下為完整96組結果；pure／heading 與 recipe／backend 名稱保留機器識別字，方便對照原始 CSV。「new」表示沒有歷史參考，不代表誤差為零。",
+  "header": "|模式|資料|方法|水平 RMSE (m)|3D RMSE (m)|歷史水平差異 (m)|"
+}

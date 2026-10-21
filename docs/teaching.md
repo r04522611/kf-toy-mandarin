@@ -1,6 +1,6 @@
 # KF 教學案例：從可解析答案到研究邊界
 
-[繁體中文](teaching.md) | [English](teaching.en.md)
+[中文版 repo](https://github.com/r04522611/kf-toy-mandarin) | [英文教材](https://github.com/r04522611/kf-toy/blob/codex/kf-cpp-toy/docs/teaching.md)
 
 這份教材搭配 `kf_teaching` 與 `kf_math_tests`。目標是讓讀者在同一組資料、prior、noise 與評分下，辨認 formulation、output approximation 與 nonlinear solver 各自改了什麼。它們不是算法排名，也不以真實資料 GNSS proxy 當成完整 pose truth。
 

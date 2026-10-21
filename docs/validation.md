@@ -1,22 +1,22 @@
-# Standalone KF validation
+# 獨立 KF 驗證總報告
 
-[繁體中文](validation.zh-TW.md) | [English](validation.en.md)
+[中文版 repo](https://github.com/r04522611/kf-toy-mandarin) | [英文驗證報告](https://github.com/r04522611/kf-toy/blob/codex/kf-cpp-toy/docs/validation.md)
 
-- Execution/determinism: **96/96 passed**; each run byte-identical on repeat.
-- Archived references: **80 cells**, maximum horizontal/3D RMSE discrepancy **0.00122629024 m** (declared tolerance 0.001 m).
-- New C15 iterative cases: **16**, no invented archived baseline.
-- Maximum runner clock error: **0 s**. No post-initialization GNSS position fusion.
+- 執行與確定性：**96/96 通過**；每組重跑輸出逐 byte 相同。
+- 歷史參考：**80 組**；水平／3D RMSE 最大差異 **0.00122629024 m**（原宣告容差 0.001 m）。
+- 新增 C15 迭代案例：**16 組**，沒有捏造歷史基準。
+- runner 最大時鐘誤差：**0 s**；初始化後沒有融合 GNSS position。
 
-**Strict archive tolerance:** 78/80 within 0.001 m; 2 outside. This gate is separate from deterministic execution and is not reported as fully passed.
+**嚴格歷史容差檢查：** 78/80 在 0.001 m 內；2 組超出。此項與執行／確定性分開判定，不能宣稱全部通過。
 
-- 11 / pure / step3 gn: horizontal delta -0.00122584258 m, 3D delta -0.00122629024 m.
-- 11 / pure / step4 lm: horizontal delta 0.00107683669 m, 3D delta 0.00107708514 m.
+- 11 / pure / step3 gn: 水平差異 -0.00122584258 m, 3D 差異 -0.00122629024 m.
+- 11 / pure / step4 lm: 水平差異 0.00107683669 m, 3D 差異 0.00107708514 m.
 
-Road scores are direct GNSS antenna residual proxies, not independent SE3 truth. Bitwise repeat applies to this image/binary/input/protocol, not arbitrary platforms. Archive compatibility and uniform numerical policies are recorded per run.
+真實道路分數是直接 GNSS antenna residual proxy，並非獨立 SE3 真值。逐 byte 重跑只適用於相同 image／binary／input／protocol，不保證任意平台一致。每組 run 記錄 archive compatibility 或 uniform 數值策略。
 
-All 96 cells follow. Mode, recipe and backend identifiers match the source CSV. "new" means no archived reference, not zero error.
+以下為完整96組結果；pure／heading 與 recipe／backend 名稱保留機器識別字，方便對照原始 CSV。「new」表示沒有歷史參考，不代表誤差為零。
 
-|Mode|Data|Method|Horizontal RMSE (m)|3D RMSE (m)|Archive delta horizontal (m)|
+|模式|資料|方法|水平 RMSE (m)|3D RMSE (m)|歷史水平差異 (m)|
 |---|---|---|---:|---:|---:|
 |heading|10|c15a gn|5.100947|5.277635|new|
 |heading|10|c15a kf|5.100989|5.279748|-1.4573498e-10|

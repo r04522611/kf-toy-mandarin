@@ -1,5 +1,7 @@
 # 10.txt／11.txt 重建實驗的資料契約
 
+[英文版本](https://github.com/r04522611/kf-toy/blob/codex/kf-cpp-toy/docs/data-contract.md)
+
 ## 建議：每份 recording 一個長格式 events.csv＋manifest.json
 
 不要合併10／11的 state 或 clock；可共用 schema，但每份 recording 獨立初始化。CSV 每列一個 event，保持 source order。建議欄位：
@@ -30,7 +32,7 @@
 
 除events.csv外，完整可重現的最低資料包還需 config、initialization protocol、scorer與reference outputs/hashes。真實資料沒有獨立完整pose truth，應稱GNSS residual proxy，不能把融合過的heading residual稱獨立yaw accuracy。
 
-## 輸出契約（完整3D版本待實作）
+## 初期輸出設計（下方列出已實作的3D版本）
 
 - states.csv：timestamp、position、quaternion（明確wxyz）、velocity、bg、ba、extra states。
 - innovations.csv：source、fused/evaluation-only、r、NIS、dimension。
